@@ -1,0 +1,9 @@
+# Von der URL https://tutorial.djangogirls.org/de/installation/#python
+# Starte Deine virtuelle Umgebung, indem du eingibst:
+
+$ bash
+$ source myvenv/bin/activate
+
+# Danach wird in Klammer das Virtual enviroment angezeigt.
+(myvenv) erich@aspire5:~/script/djangogirls$
+
