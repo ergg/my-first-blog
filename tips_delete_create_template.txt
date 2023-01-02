@@ -1,0 +1,11 @@
+# Zuerst template löschen
+oc delete templates my-first-blog
+
+# Löschen von dem build
+oc delete all,configmap,pvc,serviceaccount,rolebinding,secrets --selector app=my-first-blog
+
+# Prüfen ob der my-first-blog weg ist
+# Wenn ja dann kann danach neu deployed werden
+oc get builds
+oc create -f openshift/templates/my-first-blog.json
+oc new-app openshift/templates/my-first-blog.json -p SOURCE_REPOSITORY_URL=https://github.com/ergg/my-first-blog.git
