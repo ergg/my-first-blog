@@ -28,9 +28,9 @@ DEBUG = True
 
 # For Openshift otherwise it get confused Erich 2022-02-02
 #ALLOWED_HOSTS = ['127.0.0.1', '.pythonanywhere.com']
-ALLOWED_HOSTS = ['*']
+# ALLOWED_HOSTS = ['*']
 # ALLOWED_HOSTS = ['0.0.0.0'] # geht ned
-# ALLOWED_HOSTS = os.environ.get('DJANGO_ALLOWED_HOSTS', '*').split()   # get ned
+ALLOWED_HOSTS = os.environ.get('DJANGO_ALLOWED_HOSTS', '*').split()   # get ned
 
 # Application definition
 
