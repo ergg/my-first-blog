@@ -84,20 +84,20 @@ DATABASES = {
         'NAME': os.path.join(BASE_DIR / 'db.sqlite3'),
     }
 }
-#try:
-#    if sys.argv[1:2] != ['test']:
-#        DATABASES = {
-#            'default': {
-#                'ENGINE': 'django.db.backends.postgresql_psycopg2',
-#                'NAME': 'my-blog',
-#                'USER': 'pguser',
-#                'PASSWORD': os.environ["pgpassword"],
-#                'HOST': 'localhost',
-#                'PORT': '5432',
-#            }
-#        }
-#except:
-#    pass
+try:
+    if sys.argv[1:2] != ['test']:
+        DATABASES = {
+            'default': {
+                'ENGINE': 'django.db.backends.postgresql_psycopg2',
+                'NAME': 'my-blog',
+                'USER': 'pguser',
+                'PASSWORD': os.environ["pgpassword"],
+                'HOST': 'localhost',
+                'PORT': '5432',
+            }
+        }
+except:
+    pass
 
 
 # Password validation
