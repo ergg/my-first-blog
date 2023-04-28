@@ -79,7 +79,7 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
 DATABASES = {
-    'default': {
+    'default_erich': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': os.path.json(BASE_DIR / 'db.sqlite3'),
     }
@@ -88,7 +88,7 @@ try:
     if sys.argv[1:2] != ['test']:
         DATABASES = {
             'default': {
-                'ENGINE': 'django.db.backends.postgresql',
+                'ENGINE': 'django.db.backends.postgresql_psycopg2',
                 'NAME': 'my-blog',
                 'USER': 'pguser',
                 'PASSWORD': os.environ["pgpassword"],
