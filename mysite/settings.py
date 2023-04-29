@@ -80,24 +80,34 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR / 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': os.path.join(BASE_DIR / 'db.mysql'),
+        'MYSQL_USER': 'myroot',
+        'MYSQL_PASSWORD': 'myroot123??',
+        'MYSQL_DATABASE': 'mydjango',
     }
 }
-try:
-    if sys.argv[1:2] != ['test']:
-        DATABASES = {
-            'default': {
-                'ENGINE': 'django.db.backends.postgresql_psycopg2',
-                'NAME': 'my-blog',
-                'USER': 'pguser',
-                'PASSWORD': os.environ["pgpassword"],
-                'HOST': 'localhost',
-                'PORT': '5432',
-            }
-        }
-except:
-    pass
+
+#DATABASES = {
+#    'default': {
+#        'ENGINE': 'django.db.backends.sqlite3',
+#        'NAME': os.path.join(BASE_DIR / 'db.sqlite3'),
+#    }
+#}
+#try:
+#    if sys.argv[1:2] != ['test']:
+#        DATABASES = {
+#            'default': {
+#                'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#                'NAME': 'my-blog',
+#                'USER': 'pguser',
+#                'PASSWORD': os.environ["pgpassword"],
+#                'HOST': 'localhost',
+#                'PORT': '5432',
+#            }
+#        }
+#except:
+#    pass
 
 
 # Password validation
