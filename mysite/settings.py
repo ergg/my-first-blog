@@ -96,7 +96,7 @@ DATABASES = {
         'NAME': str(os.getenv('NAME')),
         'USER': str(os.getenv('USER')),
         'PASSWORD': str(os.getenv('PASSWORD')),
-        'HOST': 'my-first-blog-git',
+        'HOST': 'postgresql',
         'PORT': '5432',
     }
 }
