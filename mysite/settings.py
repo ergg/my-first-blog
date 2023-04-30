@@ -90,19 +90,16 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 #}
 #try:
 #    if sys.argv[1:2] != ['test']:
-        DATABASES = {
-            'default': {
-                'ENGINE': 'django.db.backends.postgresql_psycopg2',
-                'NAME': 'my-blog',
-                'NAME': str(os.getenv('NAME')),
-                'USER': str(os.getenv('USER')),
-                'PASSWORD': str(os.getenv('PASSWORD')),
-                'HOST': 'localhost',
-                'PORT': '5432',
-            }
-        }
-except:
-    pass
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': str(os.getenv('NAME')),
+        'USER': str(os.getenv('USER')),
+        'PASSWORD': str(os.getenv('PASSWORD')),
+        'HOST': 'localhost',
+        'PORT': '5432',
+    }
+}
 
 
 # Password validation
