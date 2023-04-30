@@ -9,6 +9,10 @@ https://docs.djangoproject.com/en/3.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
+# Security 2023-04-30 Erich
+from dotenv import load_dotenv
+load_dotenv()
+
 import os # new
 
 from pathlib import Path
@@ -21,14 +25,14 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-eby*6sazyqej9$)gpz#&q-6b=i9=bm0lndh@ks0sys0le9+a!2'
+SECRET_KEY = str(os.getenv('SECRET_KEY'))
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
 # For Openshift otherwise it get confused Erich 2022-02-02
 #ALLOWED_HOSTS = ['127.0.0.1', '.pythonanywhere.com']
-ALLOWED_HOSTS = ['*']    # geht new
+ALLOWED_HOSTS = str(os.getenv('ALLOWED_HOSTS'))   # geht new
 # ALLOWED_HOSTS = ['0.0.0.0'] # geht ned
 # ALLOWED_HOSTS = os.environ.get('DJANGO_ALLOWED_HOSTS', '*').split()   # get ned
 
@@ -90,8 +94,9 @@ try:
             'default': {
                 'ENGINE': 'django.db.backends.postgresql_psycopg2',
                 'NAME': 'my-blog',
-                'USER': 'pguser',
-                'PASSWORD': os.environ["pgpassword"],
+                'NAME': str(os.getenv('NAME')),
+                'USER': str(os.getenv('USER')),
+                'PASSWORD': str(os.getenv('PASSWORD')),
                 'HOST': 'localhost',
                 'PORT': '5432',
             }
