@@ -93,13 +93,14 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': str(os.getenv('NAME')),
-        'USER': str(os.getenv('USER')),
-        'PASSWORD': str(os.getenv('PASSWORD')),
-        'HOST': 'localhost',
-        'PORT': '5432',
+        'NAME': str(os.getenv('POSTGRESQL_DATABASE')),
+        'USER': str(os.getenv('POSTGRESQL_USER')),
+        'PASSWORD': str(os.getenv('POSTGRESQL_PASSWORD')),
     }
 }
+
+#        'HOST': 'localhost',
+#        'PORT': '5432',
 
 
 # Password validation
