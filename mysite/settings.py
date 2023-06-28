@@ -94,9 +94,12 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': str(os.getenv('POSTGRESQL_DATABASE')),
-        'USER': str(os.getenv('POSTGRESQL_USER')),
-        'PASSWORD': str(os.getenv('POSTGRESQL_PASSWORD')),
+        #'NAME': str(os.getenv('POSTGRESQL_DATABASE')),
+        #'USER': str(os.getenv('POSTGRESQL_USER')),
+        #'PASSWORD': str(os.getenv('POSTGRESQL_PASSWORD')),
+        'NAME': os.getenv('POSTGRESQL_DATABASE'),
+        'USER': os.getenv('POSTGRESQL_USER'),
+        'PASSWORD': os.getenv('POSTGRESQL_PASSWORD'),
     }
 }
 
