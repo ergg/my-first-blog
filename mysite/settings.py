@@ -97,9 +97,9 @@ DATABASES = {
         #'NAME': str(os.getenv('POSTGRESQL_DATABASE')),
         #'USER': str(os.getenv('POSTGRESQL_USER')),
         #'PASSWORD': str(os.getenv('POSTGRESQL_PASSWORD')),
-        'NAME': os.getenv('POSTGRESQL_DATABASE'),
-        'USER': os.getenv('POSTGRESQL_USER'),
-        'PASSWORD': os.getenv('POSTGRESQL_PASSWORD'),
+        'NAME': os.getenv('DATABASE_NAME'),
+        'USER': os.getenv('DATABASE_USER'),
+        'PASSWORD': os.getenv('DATABASE_PASSWORD'),
         'HOST': os.getenv('DATABASE_SERVICE_NAME'),
     }
 }
