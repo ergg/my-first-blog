@@ -100,6 +100,7 @@ DATABASES = {
         'NAME': os.getenv('POSTGRESQL_DATABASE'),
         'USER': os.getenv('POSTGRESQL_USER'),
         'PASSWORD': os.getenv('POSTGRESQL_PASSWORD'),
+        'HOST': os.getenv('DATABASE_SERVICE_NAME'),
     }
 }
 
